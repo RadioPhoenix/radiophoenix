@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RadioPhoenix | Bar · Radio · Estudio — Malasaña, Madrid</title>
+  <meta name="description" content="RadioPhoenix — Bar de proximidad, radio en emisión continua y estudio profesional de grabación en Malasaña, Madrid. Cultura sonora desde el corazón del barrio.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://radiophoenix.es/">
+
+  <!-- Geo -->
+  <meta name="geo.region" content="ES-MD">
+  <meta name="geo.placename" content="Malasaña, Madrid">
+  <meta name="geo.position" content="40.4268;-3.7038">
+  <meta name="ICBM" content="40.4268, -3.7038">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radiophoenix.es/">
+  <meta property="og:title" content="RadioPhoenix | Bar · Radio · Estudio — Malasaña, Madrid">
+  <meta property="og:description" content="Un punto de convergencia entre bar de proximidad, radio en emisión continua y estudio profesional de grabación. Malasaña, Madrid.">
+  <meta property="og:image" content="https://radiophoenix.es/radio_phonix_barra_principal.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="RadioPhoenix">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RadioPhoenix | Bar · Radio · Estudio — Malasaña, Madrid">
+  <meta name="twitter:description" content="Un punto de convergencia entre bar de proximidad, radio en emisión continua y estudio profesional de grabación. Malasaña, Madrid.">
+  <meta name="twitter:image" content="https://radiophoenix.es/radio_phonix_barra_principal.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'UsedServers';
+      src: url('/fonts/Used Servers Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'UsedServers';
+      src: url('/fonts/Used Servers.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Audiowide';
+      src: url('/fonts/Audiowide-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'LDR';
+      src: url('/fonts/ldr1.ttf') format('truetype');
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --negro:       #f8f5f2;
+      --neon:        #ff6e00;
+      --neon-suave:  #e07820;
+      --rojo:        #e01a00;
+      --rojo-sangre: #7a0a00;
+      --blanco:      #f0ebe0;
+      --texto:       #1a0f0a;
+      --gris:        #ede8e0;
+      --gris-medio:  #d4cec5;
+      --gris-claro:  #555050;
+      --glow-neon:   rgba(255,110,0,0.3);
+      --glow-rojo:   rgba(224,26,0,0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--negro);
+      color: var(--texto);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 3rem;
+      background: rgba(248,245,242,0.95);
+      border-bottom: 1px solid rgba(255,110,0,0.25);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.18em;
+      color: var(--neon); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--texto); text-decoration: none; opacity: 0.65;
+      transition: all 0.25s;
+    }
+    .nav-links li:nth-child(odd) a:hover  { opacity:1; color: var(--neon); text-shadow: 0 0 8px var(--glow-neon); }
+    .nav-links li:nth-child(even) a:hover { opacity:1; color: var(--rojo); text-shadow: 0 0 8px var(--glow-rojo); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: flex-end; align-items: center;
+      padding: 5rem 3rem 2rem;
+      position: relative;
+      overflow: visible;
+      text-align: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        url('/fondo.jpg') center/cover no-repeat,
+        radial-gradient(ellipse at 20% 50%, rgba(122,10,0,0.65) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 50%, rgba(255,110,0,0.28) 0%, transparent 55%),
+        linear-gradient(135deg, #000000 0%, #010101 40%, #010000 100%);
+      filter: brightness(0.62) saturate(0.85);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top,
+        rgba(248,245,242,1) 0%,
+        rgba(248,245,242,0.72) 10%,
+        rgba(255,90,5,0.48) 26%,
+        rgba(255,60,0,0.18) 44%,
+        transparent 62%,
+        rgba(0,0,0,0.18) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hero-tag {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.3em;
+      color: var(--neon); text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      opacity: 0.9;
+    }
+    .hero-title {
+      font-family: 'Audiowide', sans-serif; font-weight: 700;
+      font-size: clamp(2.8rem, 6vw, 6rem);
+      line-height: 1; letter-spacing: 0.03em;
+      color: var(--texto);
+      margin-bottom: 0.3rem;
+    }
+    .hero-title .neon-line {
+      display: block; color: var(--neon);
+      text-shadow: 0 0 20px var(--glow-neon);
+    }
+    .hero-sub {
+      font-family: 'Syne', sans-serif; font-weight: 400;
+      font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gris-claro); margin-bottom: 1.8rem;
+    }
+
+    /* ── PLAYER ── */
+    .player-wrap {
+      display: inline-flex; align-items: center; gap: 1.8rem;
+      background: #faf8f4;
+      border: 1px solid rgba(255,110,0,0.45);
+      padding: 1.2rem 1.8rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .play-btn {
+      width: 50px; height: 50px;
+      border: 1px solid var(--neon);
+      background: transparent; color: var(--neon);
+      cursor: pointer; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s;
+      box-shadow: 0 0 10px var(--glow-neon);
+    }
+    .play-btn:hover {
+      background: var(--rojo); border-color: var(--rojo); color: #fff;
+      box-shadow: 0 0 12px var(--glow-rojo);
+      transform: scale(1.08);
+    }
+    .player-label {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.55rem; letter-spacing: 0.25em;
+      color: var(--neon-suave); text-transform: uppercase; margin-bottom: 0.25rem;
+    }
+    .player-title {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.9rem; color: var(--texto);
+    }
+    .player-status {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.55rem; color: var(--gris-claro); margin-top: 0.2rem;
+    }
+    .dot {
+      display: inline-block; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--neon); margin-right: 5px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    /* ── DIVISOR ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--neon), var(--rojo), transparent);
+      opacity: 0.3;
+    }
+
+    /* ── SECCIONES BASE ── */
+    section { padding: 4rem 3rem; border-bottom: 1px solid rgba(255,110,0,0.12); }
+    .section-tag {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.58rem; letter-spacing: 0.3em;
+      color: var(--neon-suave); text-transform: uppercase;
+      margin-bottom: 1.8rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .section-tag::after {
+      content: ''; flex: 1; max-width: 50px;
+      height: 1px; background: var(--neon-suave); opacity: 0.6;
+    }
+    .section-title {
+      font-family: 'Audiowide', sans-serif; font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95; letter-spacing: 0.02em;
+      color: var(--texto); margin-bottom: 1.2rem;
+    }
+    .section-title .accent { color: var(--neon); }
+
+    /* ── GALERÍA SLIDER ── */
+    .gallery-section {
+      padding: 0; border-bottom: 1px solid var(--gris);
+      background: var(--negro); overflow: hidden;
+    }
+    .gallery-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden;
+      height: 420px; cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.82) saturate(0.95) contrast(1.05);
+      transition: all 0.5s ease;
+    }
+    .gallery-item:hover img {
+      filter: brightness(0.85) saturate(1) contrast(1.05);
+      transform: scale(1.04);
+    }
+    .gallery-item .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top,
+        rgba(0,0,0,0.55) 0%,
+        rgba(160,45,0,0.22) 32%,
+        transparent 65%);
+    }
+    .gallery-item .gallery-label {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.55rem; letter-spacing: 0.2em;
+      color: var(--neon); text-transform: uppercase;
+    }
+    .gallery-item::after {
+      content: '';
+      position: absolute; inset: 0;
+      border: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .gallery-item:hover::after { border-color: rgba(255,110,0,0.4); }
+
+    /* ── MANIFIESTO ── */
+    .manifesto-wrap { max-width: 780px; margin: 0 auto; text-align: center; }
+    .manifesto-quote {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+      line-height: 1.55; color: var(--texto);
+      margin-bottom: 2.5rem;
+    }
+    .manifesto-body {
+      font-size: 0.88rem; color: var(--gris-claro);
+      line-height: 1.95; margin-bottom: 1.2rem;
+    }
+    .manifesto-highlight {
+      color: var(--neon-suave); font-style: italic; font-size: 0.95rem;
+    }
+    .neon-divider {
+      width: 80px; height: 2px; margin: 2.5rem auto;
+      background: linear-gradient(to right, var(--rojo-sangre), var(--neon), var(--rojo));
+      box-shadow: 0 0 10px var(--glow-neon);
+    }
+
+    /* ── PILARES ── */
+    .pilares {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; margin-top: 2.5rem;
+    }
+    .pilar {
+      padding: 2.5rem 2rem;
+      background: #faf8f4;
+      border: 1px solid var(--gris-medio);
+      box-shadow: 0 4px 28px rgba(0,0,0,0.12);
+      position: relative; overflow: hidden;
+      transition: all 0.35s;
+    }
+    .pilar::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--rojo-sangre), var(--neon));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.35s;
+    }
+    .pilar:hover::before { transform: scaleX(1); }
+    .pilar:hover {
+      background: rgba(255,110,0,0.07);
+      border-color: rgba(255,110,0,0.3);
+      box-shadow: 0 4px 28px rgba(0,0,0,0.1);
+    }
+    .pilar-num {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 5rem; line-height: 1;
+      color: rgba(255,110,0,0.10);
+      position: absolute; top: 0.8rem; right: 1.2rem;
+    }
+    .pilar-icon {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.58rem; letter-spacing: 0.3em;
+      color: var(--neon-suave); text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .pilar h3 {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 1.35rem; color: var(--texto); margin-bottom: 1rem;
+    }
+    .pilar p { font-size: 0.83rem; color: var(--gris-claro); line-height: 1.85; }
+
+    /* ── RAÍCES ── */
+    .raices {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      border-top: 1px solid var(--gris-medio);
+      border-left: 1px solid var(--gris-medio);
+      margin-top: 2rem; max-width: 900px;
+    }
+    .raiz {
+      padding: 1.6rem 2rem;
+      background: #faf8f4;
+      border-bottom: 1px solid var(--gris-medio);
+      border-right: 1px solid var(--gris-medio);
+      transition: all 0.3s;
+    }
+    .raiz:hover { background: rgba(255,110,0,0.07); box-shadow: 0 3px 20px rgba(0,0,0,0.07) inset; }
+    .raiz-num {
+      font-family: 'Audiowide', sans-serif; font-size: 0.58rem;
+      color: var(--rojo); letter-spacing: 0.2em; margin-bottom: 0.5rem;
+    }
+    .raiz h4 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.95rem; color: var(--texto); margin-bottom: 0.4rem;
+    }
+    .raiz p { font-size: 0.78rem; color: var(--gris-claro); line-height: 1.75; }
+
+    /* ── EVENTOS ── */
+    .eventos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px,1fr));
+      gap: 2px; background: var(--gris-medio); margin-top: 2rem;
+    }
+    .evento {
+      background: #faf8f4; padding: 1.7rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .evento::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--rojo-sangre), var(--neon));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .evento:hover::after { transform: scaleX(1); }
+    .evento:hover { background: rgba(255,110,0,0.07); box-shadow: 0 4px 28px rgba(0,0,0,0.1); }
+    .evento:hover h3 { color: var(--neon); }
+    .evento-fecha {
+      font-family: 'Audiowide', sans-serif; font-size: 0.58rem;
+      letter-spacing: 0.18em; color: var(--rojo); margin-bottom: 1rem;
+    }
+    .evento h3 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1.05rem; color: var(--texto);
+      margin-bottom: 0.4rem; transition: all 0.3s;
+    }
+    .evento-artistas { font-size: 0.78rem; color: var(--gris-claro); margin-bottom: 1rem; }
+    .evento-tag {
+      display: inline-block;
+      font-family: 'Audiowide', sans-serif; font-size: 0.5rem;
+      letter-spacing: 0.15em; color: var(--texto);
+      background: var(--neon-suave); padding: 0.2rem 0.7rem;
+      text-transform: uppercase;
+    }
+
+    /* ── HORARIOS ── */
+    .horarios-grid {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: 2px; max-width: 580px; margin-top: 2rem;
+    }
+    .horario {
+      padding: 1.2rem 1.8rem;
+      background: #faf8f4;
+      border: 1px solid var(--gris-medio);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .horario:hover { border-color: rgba(255,110,0,0.3); box-shadow: 0 3px 20px rgba(0,0,0,0.08); }
+    .horario-dia {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.85rem; color: var(--texto); margin-bottom: 0.3rem;
+    }
+    .horario-hora { font-family: 'Audiowide', sans-serif; font-size: 0.7rem; color: var(--neon-suave); }
+    .horario-cerrado { font-family: 'Audiowide', sans-serif; font-size: 0.7rem; color: var(--gris-claro); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(255,110,0,0.25);
+      background:
+        radial-gradient(ellipse at 18% 0%, rgba(255,110,0,0.22) 0%, transparent 50%),
+        radial-gradient(ellipse at 88% 100%, rgba(122,10,0,0.28) 0%, transparent 45%),
+        linear-gradient(to bottom, #0d0603 0%, #090401 100%);
+    }
+    footer .footer-logo               { color: #f0ebe0; }
+    footer .footer-desc               { color: rgba(240,235,224,0.65); }
+    footer .footer-links a            { color: rgba(240,235,224,0.70); opacity: 1; }
+    footer .footer-links a:hover      { color: var(--rojo); text-shadow: 0 0 10px var(--glow-rojo); }
+    footer .footer-copy               { border-top: 1px solid rgba(255,110,0,0.15); }
+    footer .footer-copy p             { color: rgba(240,235,224,0.42); opacity: 1; }
+    .footer {
+      padding: 4rem 3rem;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+    }
+    .footer-logo {
+      font-family: 'Audiowide', sans-serif; font-weight: 700;
+      font-size: 3rem; line-height: 0.95; color: var(--texto); margin-bottom: 1.2rem;
+    }
+    .footer-logo span {
+      color: var(--neon);
+    }
+    .footer-desc { font-size: 0.8rem; color: var(--gris-claro); line-height: 1.85; max-width: 380px; }
+    .footer-links h4 {
+      font-family: 'Audiowide', sans-serif; font-size: 0.58rem;
+      letter-spacing: 0.3em; color: var(--rojo); text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 0.9rem; }
+    .footer-links a {
+      font-family: 'Syne', sans-serif; font-size: 0.88rem;
+      color: var(--texto); text-decoration: none; opacity: 0.6;
+      transition: all 0.25s;
+    }
+    .footer-links a:hover { opacity: 1; color: var(--rojo); text-shadow: 0 0 10px var(--glow-rojo); }
+    .footer-copy {
+      border-top: 1px solid var(--gris);
+      padding: 1.5rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy p {
+      font-family: 'Audiowide', sans-serif; font-size: 0.55rem;
+      letter-spacing: 0.15em; color: var(--texto); opacity: 0.5;
+    }
+
+    /* ── BTN GENERAL ── */
+    .btn {
+      display: inline-block;
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--texto); text-decoration: none;
+      border: 1px solid rgba(255,110,0,0.6);
+      padding: 0.8rem 1.8rem;
+      transition: all 0.25s;
+    }
+    .btn:hover {
+      background: var(--rojo); border-color: var(--rojo); color: #fff;
+      box-shadow: 0 0 12px var(--glow-rojo);
+    }
+    .btn-neon {
+      border-color: var(--neon); color: var(--neon);
+    }
+    .btn-neon:hover {
+      background: var(--rojo); border-color: var(--rojo); color: #fff;
+      box-shadow: 0 0 12px var(--glow-rojo);
+    }
+    .btn-rojo {
+      border-color: var(--rojo); color: var(--rojo);
+    }
+    .btn-rojo:hover {
+      background: var(--rojo-sangre); border-color: var(--rojo-sangre); color: #fff;
+      box-shadow: 0 0 12px rgba(122,10,0,0.4);
+    }
+
+    /* ── HOVERS CON PALETA ROJO/NARANJA ── */
+    .pilar:nth-child(2)::before { background: linear-gradient(to right, var(--neon), var(--rojo)); }
+    .pilar:nth-child(3)::before { background: linear-gradient(to right, var(--rojo-sangre), var(--rojo)); }
+    .evento:nth-child(even):hover { background: rgba(224,26,0,0.07); }
+    .evento:nth-child(even):hover h3 { color: var(--rojo); }
+    .evento:nth-child(even)::after { background: linear-gradient(to right, var(--neon), var(--rojo-sangre)); }
+    .raiz:nth-child(even):hover { background: rgba(224,26,0,0.07); }
+    .horario:nth-child(even):hover { border-color: rgba(224,26,0,0.4); }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px;
+      background: none; border: none;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--texto); transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    /* ── TABLET ── */
+    /* ── TABLET GRANDE (1024px) ── */
+    @media (max-width: 1024px) {
+      .pilares { grid-template-columns: repeat(2,1fr); }
+      .eventos-grid { grid-template-columns: repeat(2,1fr); }
+      .gallery-item { height: 320px; }
+      .hero-circle-btn { width: 130px; height: 130px; }
+      .hero-circle-btn--lg { width: 160px; height: 160px; }
+      .btn-circle-label { font-size: 1.1rem; }
+    }
+
+    /* ── TABLET / MÓVIL (768px) ── */
+    @media (max-width: 768px) {
+      /* nav: mantiene position:fixed del base, solo ajustes */
+      nav { padding: 0.9rem 1.4rem; flex-wrap: wrap; }
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        width: 100%; margin-top: 0.5rem;
+        border-top: 1px solid rgba(255,110,0,0.18);
+        padding-top: 0.6rem; padding-bottom: 0.3rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block; font-size: 0.68rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(26,15,10,0.07);
+        opacity: 0.85;
+      }
+
+      /* hero */
+      .hero { padding: 5rem 1.4rem 2rem; min-height: 100svh; }
+      .hero-tag { font-size: 0.5rem; letter-spacing: 0.18em; }
+      .hero-title { font-size: clamp(2rem, 9vw, 3.2rem); }
+      .hero-sub { font-size: 0.6rem; letter-spacing: 0.1em; margin-bottom: 1.2rem; }
+
+      /* player */
+      .player-wrap { flex-direction: row; gap: 1rem; padding: 1rem 1.2rem; width: 100%; }
+      .play-btn { width: 44px; height: 44px; flex-shrink: 0; }
+      .player-title { font-size: 0.8rem; }
+
+      /* secciones */
+      section { padding: 3.5rem 1.4rem; }
+      .section-title { font-size: clamp(1.6rem, 7vw, 2.8rem); margin-bottom: 1rem; }
+      .section-tag { margin-bottom: 1.5rem; }
+
+      /* galería */
+      .gallery-wrapper { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item { height: 200px; }
+      .gallery-item:first-child { grid-column: 1 / -1; height: 240px; }
+      .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+      /* manifiesto */
+      .manifesto-wrap { text-align: left; }
+      .manifesto-quote { font-size: 1rem; line-height: 1.6; }
+      .manifesto-body { font-size: 0.83rem; }
+      .neon-divider { margin: 2rem 0; }
+
+      /* pilares */
+      .pilares { grid-template-columns: 1fr; gap: 2px; margin-top: 1.5rem; }
+      .pilar { padding: 1.8rem 1.4rem; }
+      .pilar-num { font-size: 3.5rem; }
+
+      /* raíces */
+      .raices { grid-template-columns: 1fr 1fr; max-width: 100%; margin-top: 1.5rem; }
+      .raiz { padding: 1.2rem 1.4rem; }
+
+      /* comunidad */
+      .comunidad-grid { grid-template-columns: 1fr; gap: 2px; margin-top: 1.5rem; }
+      .comunidad-card { padding: 1.8rem 1.4rem; }
+
+      /* eventos */
+      .eventos-grid { grid-template-columns: 1fr; margin-top: 1.5rem; }
+      .evento { padding: 1.4rem; }
+
+      /* horarios */
+      .horarios-grid { grid-template-columns: 1fr 1fr; margin-top: 1.5rem; }
+      .horario { padding: 1.2rem 1rem; }
+      .horario-dia { font-size: 0.78rem; }
+      .horario-hora, .horario-cerrado { font-size: 0.65rem; }
+
+      /* footer */
+      .footer { grid-template-columns: 1fr; gap: 1.8rem; padding: 2.5rem 1.4rem; }
+      .footer-logo { font-size: 2rem; }
+      .footer-desc { max-width: 100%; font-size: 0.8rem; }
+      .footer-copy { flex-direction: column; gap: 0.4rem; padding: 1.2rem 1.4rem; text-align: center; }
+      .btn { padding: 0.8rem 1.4rem; font-size: 0.55rem; width: 100%; text-align: center; display: block; }
+    }
+
+    /* ── MÓVIL PEQUEÑO (420px) ── */
+    @media (max-width: 420px) {
+      nav { padding: 0.8rem 1rem; }
+      .hero { padding: 4.5rem 1rem 1.5rem; }
+      .hero-title { font-size: clamp(1.6rem, 9vw, 2.4rem); }
+      .gallery-wrapper { grid-template-columns: 1fr; }
+      .gallery-item { height: 200px; }
+      .gallery-item:first-child { grid-column: auto; height: 220px; }
+      .horarios-grid { grid-template-columns: 1fr; }
+      .raices { grid-template-columns: 1fr; }
+      section { padding: 2.5rem 1rem; }
+      .section-title { font-size: clamp(1.4rem, 8vw, 2.2rem); }
+      .pilar { padding: 1.5rem 1rem; }
+      .raiz { padding: 1rem; }
+      .comunidad-card { padding: 1.5rem 1rem; }
+      .intro-personal .quote-grande { padding-left: 1.2rem; }
+    }
+
+    /* ── BOTONES CIRCULARES HERO ── */
+    .hero-nav-btns {
+      display: flex; gap: 2rem;
+      margin-bottom: 2.2rem; flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-circle-btn {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: #e8e3da;
+      box-shadow:
+        0 8px 0 #d4cec5,
+        0 10px 25px rgba(0,0,0,0.2),
+        inset 0 2px 4px rgba(255,255,255,0.6);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: all 0.18s ease;
+      position: relative; overflow: hidden;
+      cursor: pointer;
+      transform: translateY(0);
+    }
+    .hero-circle-btn::after {
+      content: '';
+      position: absolute; inset: 0; border-radius: 50%;
+      background: rgba(0,0,0,0.35);
+      transition: background 0.18s;
+    }
+    .hero-circle-btn:hover::after {
+      background: rgba(255,110,0,0.25);
+    }
+    .hero-circle-btn:hover {
+      box-shadow:
+        0 12px 0 #d4cec5,
+        0 16px 35px rgba(255,110,0,0.35),
+        inset 0 2px 6px rgba(255,255,255,0.6);
+      transform: translateY(-4px);
+    }
+    .hero-circle-btn:active {
+      box-shadow:
+        0 2px 0 #d4cec5,
+        0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(5px);
+    }
+    .btn-circle-label {
+      position: relative; z-index: 2;
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.4rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #fff;
+      text-align: center; line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,0.9);
+      transition: letter-spacing 0.2s, color 0.2s;
+    }
+    .hero-circle-btn:hover .btn-circle-label {
+      letter-spacing: 0.12em;
+      color: #ffb060;
+      text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 24px rgba(255,110,0,0.7);
+    }
+    .hero-circle-btn--lg {
+      width: 180px; height: 180px;
+    }
+    @media(max-width:768px) {
+      .hero-nav-btns {
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: 0.9rem; justify-items: center; margin-bottom: 1.8rem;
+      }
+      .hero-circle-btn { width: 130px; height: 130px; }
+      .hero-circle-btn--lg { width: 130px; height: 130px; }
+      .btn-circle-label { font-size: 1rem; }
+    }
+    @media(max-width:420px) {
+      .hero-nav-btns { gap: 0.6rem; }
+      .hero-circle-btn { width: 100px; height: 100px; }
+      .hero-circle-btn--lg { width: 100px; height: 100px; }
+      .btn-circle-label { font-size: 0.78rem; letter-spacing: 0.04em; }
+    }
+
+    /* ── INTRO PERSONAL ── */
+    .intro-personal {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
+    }
+    .intro-personal .quote-grande {
+      font-family: 'Audiowide', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      line-height: 1.35; color: var(--texto);
+      border-left: 2px solid var(--neon);
+      padding-left: 2rem;
+    }
+    .intro-personal .quote-grande em { color: var(--neon); font-style: normal; }
+    .intro-personal-text p { font-size: 0.9rem; color: var(--gris-claro); line-height: 1.95; margin-bottom: 1.1rem; }
+    .intro-personal-text p strong { color: var(--texto); font-weight: 400; }
+    @media(max-width:768px) {
+      .intro-personal { grid-template-columns: 1fr; gap: 2rem; }
+      .intro-personal .quote-grande { font-size: 1.15rem; }
+    }
+
+    /* ── FONDOS DE SECCIÓN ── */
+
+    /* grupo 1: claros que calientan hacia manifiesto */
+    #porque {
+      background:
+        radial-gradient(ellipse at 80% 25%, rgba(224,26,0,0.10) 0%, transparent 45%),
+        radial-gradient(ellipse at 20% 75%, rgba(255,110,0,0.24) 0%, transparent 50%),
+        linear-gradient(160deg, #e4cdb8 0%, #ecd8c8 40%, #f2e8e0 100%);
+    }
+    #participa {
+      background:
+        radial-gradient(ellipse at 75% 60%, rgba(122,10,0,0.10) 0%, transparent 45%),
+        radial-gradient(ellipse at 25% 40%, rgba(255,110,0,0.24) 0%, transparent 52%),
+        linear-gradient(135deg, #e4cdb8 0%, #dcc5ae 40%, #e8d2be 100%);
+    }
+
+    /* ancla oscura: sistema (triángulo) */
+    .triangulo-section {
+      background:
+        radial-gradient(ellipse at 50% 15%, rgba(255,110,0,0.22) 0%, transparent 58%),
+        radial-gradient(ellipse at 85% 80%, rgba(122,10,0,0.30) 0%, transparent 48%),
+        linear-gradient(180deg, #0a0401 0%, #070200 50%, #0d0603 100%);
+      border-bottom: 1px solid rgba(255,110,0,0.25);
+    }
+
+    /* ancla oscura 1 */
+    #manifiesto {
+      background:
+        radial-gradient(ellipse at 28% 50%, rgba(255,110,0,0.22) 0%, transparent 56%),
+        radial-gradient(ellipse at 82% 20%, rgba(122,10,0,0.35) 0%, transparent 48%),
+        linear-gradient(160deg, #0d0603 0%, #090401 50%, #070200 100%);
+      border-bottom: 1px solid rgba(255,110,0,0.25);
+    }
+
+    /* grupo 2: claros entre las dos anclas oscuras */
+    #espacio {
+      background:
+        radial-gradient(ellipse at 15% 70%, rgba(224,26,0,0.10) 0%, transparent 45%),
+        radial-gradient(ellipse at 70% 35%, rgba(255,110,0,0.24) 0%, transparent 50%),
+        linear-gradient(160deg, #f2e8e0 0%, #e4cdb8 45%, #ecd5c0 100%);
+    }
+    #identidad {
+      background:
+        radial-gradient(ellipse at 85% 30%, rgba(122,10,0,0.12) 0%, transparent 44%),
+        radial-gradient(ellipse at 25% 65%, rgba(255,110,0,0.26) 0%, transparent 50%),
+        linear-gradient(135deg, #e4cdb8 0%, #f2e8e0 50%, #dcc5ae 100%);
+    }
+
+    /* ancla oscura 2 */
+    #eventos {
+      background:
+        radial-gradient(ellipse at 72% 30%, rgba(255,110,0,0.22) 0%, transparent 52%),
+        radial-gradient(ellipse at 18% 72%, rgba(122,10,0,0.32) 0%, transparent 48%),
+        linear-gradient(180deg, #0a0401 0%, #070200 50%, #0d0603 100%);
+      border-bottom: 1px solid rgba(255,110,0,0.25);
+    }
+
+    /* cierre cálido */
+    #visita {
+      background:
+        radial-gradient(ellipse at 70% 30%, rgba(224,26,0,0.09) 0%, transparent 44%),
+        radial-gradient(ellipse at 30% 65%, rgba(255,110,0,0.22) 0%, transparent 50%),
+        linear-gradient(180deg, #f2e8e0 0%, #e4cdb8 100%);
+    }
+
+    /* ── SECCIONES OSCURAS: overrides ── */
+    .triangulo-section .section-title       { color: var(--blanco); }
+    .triangulo-section > p                  { color: rgba(240,235,224,0.65) !important; }
+    .triangulo-section .tri-nodo            { background: #1c0a04; border-color: rgba(255,110,0,0.22); }
+    .triangulo-section .tri-nodo:hover      { background: rgba(255,110,0,0.12); border-color: var(--neon); }
+    .triangulo-section .tri-nodo h3         { color: #f0ebe0; }
+    .triangulo-section .tri-nodo p          { color: rgba(240,235,224,0.62); }
+
+    #manifiesto .manifesto-quote { color: var(--blanco); }
+    #manifiesto .manifesto-body  { color: rgba(240,235,224,0.72); }
+
+    #eventos .section-title    { color: var(--blanco); }
+    #eventos > p               { color: rgba(240,235,224,0.65) !important; }
+    #eventos .eventos-grid     { background: rgba(255,80,0,0.28); }
+    #eventos .evento           { background: #110601; }
+    #eventos .evento:hover     { background: rgba(255,110,0,0.14); box-shadow: 0 4px 28px rgba(0,0,0,0.35); }
+    #eventos .evento:nth-child(even):hover { background: rgba(224,26,0,0.14); }
+    #eventos .evento h3        { color: #f0ebe0; }
+    #eventos .evento:hover h3  { color: var(--neon); }
+    #eventos .evento-artistas  { color: rgba(240,235,224,0.58); }
+
+    /* ── TRIÁNGULO ── */
+    .triangulo-wrap {
+      position: relative;
+      max-width: 700px; margin: 2.5rem auto 0;
+      height: 390px;
+    }
+    .tri-svg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+    }
+    .tri-nodo {
+      position: absolute;
+      width: 180px;
+      background: #faf8f4;
+      border: 1px solid var(--gris-medio);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      transition: all 0.35s;
+      cursor: default;
+    }
+    .tri-nodo:hover {
+      border-color: var(--neon);
+      box-shadow: 0 4px 28px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+      z-index: 10;
+    }
+    .tri-nodo:hover .tri-nodo-ico { text-shadow: 0 0 20px var(--glow-neon); }
+    .tri-nodo.nodo-radio { top: 0; left: 50%; transform: translateX(-50%); }
+    .tri-nodo.nodo-bar   { bottom: 0; left: 0; }
+    .tri-nodo.nodo-est   { bottom: 0; right: 0; }
+    .tri-nodo.nodo-radio:hover { transform: translateX(-50%) translateY(-4px); }
+    .tri-nodo-ico {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 0.55rem; letter-spacing: 0.2em;
+      color: var(--neon-suave); text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      transition: all 0.35s;
+    }
+    .tri-nodo h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--texto); margin-bottom: 0.5rem; }
+    .tri-nodo p { font-size: 0.72rem; color: var(--gris-claro); line-height: 1.7; }
+    .tri-nodo .tri-btn {
+      display: inline-block; margin-top: 1rem;
+      font-family: 'Audiowide', sans-serif; font-size: 0.5rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--texto); background: var(--neon);
+      padding: 0.35rem 0.8rem; text-decoration: none;
+      transition: all 0.25s;
+    }
+    .tri-btn:hover { background: var(--rojo) !important; }
+    @media(max-width:768px) {
+      .triangulo-wrap { height: auto; max-width: 100%; position: static; }
+      .tri-nodo { position: static; width: 100%; transform: none !important; margin-bottom: 2px; }
+      .tri-svg { display: none; }
+    }
+
+    /* ── COMUNIDAD ── */
+    .comunidad-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; margin-top: 2rem;
+    }
+    .comunidad-card {
+      padding: 2rem 1.8rem; background: #faf8f4;
+      border: 1px solid var(--gris-medio);
+      box-shadow: 0 4px 28px rgba(0,0,0,0.12);
+      position: relative; overflow: hidden; transition: all 0.35s;
+    }
+    .comunidad-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: linear-gradient(to right, var(--rojo-sangre), var(--neon));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+    }
+    .comunidad-card:hover::after { transform: scaleX(1); }
+    .comunidad-card:hover { background: rgba(255,110,0,0.07); border-color: rgba(255,110,0,0.25); box-shadow: 0 4px 28px rgba(0,0,0,0.1); }
+    .comunidad-card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--texto); margin-bottom: 0.8rem; }
+    .comunidad-card p { font-size: 0.82rem; color: var(--gris-claro); line-height: 1.85; margin-bottom: 1.2rem; }
+    .comunidad-ico { font-family: 'Audiowide', sans-serif; font-size: 0.55rem; letter-spacing: 0.25em; color: var(--rojo); margin-bottom: 1.2rem; }
+    .comunidad-cta {
+      font-family: 'Audiowide', sans-serif; font-size: 0.55rem;
+      letter-spacing: 0.15em; color: var(--neon-suave);
+      text-decoration: none; text-transform: uppercase;
+      border-bottom: 1px solid rgba(224,120,32,0.45);
+      padding-bottom: 2px; transition: all 0.25s;
+    }
+    .comunidad-cta:hover { color: var(--rojo); border-color: var(--rojo); }
+    @media(max-width:768px) {
+      .comunidad-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease var(--delay, 0s), transform 0.55s ease var(--delay, 0s);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1; transform: none; transition: none; }
+    }
+    /* preserva translateX(-50%) del nodo superior durante la animación de scroll */
+    .tri-nodo.nodo-radio.fade-in                  { transform: translateX(-50%) translateY(20px); }
+    .tri-nodo.nodo-radio.fade-in.visible           { transform: translateX(-50%) translateY(0); }
+    .tri-nodo.nodo-radio.fade-in.visible:hover     { transform: translateX(-50%) translateY(-4px); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "RadioPhoenix",
+    "description": "Bar de proximidad, radio en emisión continua y estudio profesional de grabación en Malasaña, Madrid.",
+    "url": "https://radiophoenix.es",
+    "email": "hola@radiophoenix.es",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Madrid",
+      "addressRegion": "Comunidad de Madrid",
+      "addressCountry": "ES",
+      "streetAddress": "Malasaña"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.4268,
+      "longitude": -3.7038
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Wednesday", "Thursday"],
+        "opens": "20:00",
+        "closes": "01:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "20:00",
+        "closes": "02:30"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/radiophoenix/",
+      "https://ra.co/clubs/208329"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">RADIOPHOENIX</a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span><!-- --></span><span><!-- --></span><span><!-- --></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#espacio" onclick="closeMenu()">Espacio</a></li>
+    <li><a href="#identidad" onclick="closeMenu()">Identidad</a></li>
+    <li><a href="#eventos" onclick="closeMenu()">Eventos</a></li>
+    <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Malasaña, Madrid &nbsp;·&nbsp; Bar · Radio · Estudio</div>
+    <h1 class="hero-title">
+      RADIO<span class="neon-line">PHOENIX</span>
+    </h1>
+    <p class="hero-sub">MediaRoom — Emisión Continua</p>
+
+    <div class="hero-nav-btns">
+      <a href="#sistema" class="hero-circle-btn" style="background-image:url('/radio_phoenix_arriba.jpg'); background-size:cover; background-position:center;">
+        <span class="btn-circle-label">Radio</span>
+      </a>
+      <a href="#visita" class="hero-circle-btn" style="background-image:url('/phoenix-local.jpg'); background-size:cover; background-position:center 20%;">
+        <span class="btn-circle-label">Bar</span>
+      </a>
+      <a href="/estudio.html" class="hero-circle-btn" style="background-image:url('/radio_phoenix_arriba.jpg'); background-size:cover; background-position:center top;">
+        <span class="btn-circle-label">Estudio</span>
+      </a>
+      <a href="#participa" class="hero-circle-btn hero-circle-btn--lg" style="background-image:url('/radio_phonix_barra_principal.jpg'); background-size:cover; background-position:center;">
+        <span class="btn-circle-label">Comunidad</span>
+      </a>
+    </div>
+
+    <div class="player-wrap">
+      <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+      <div>
+        <div class="player-label">En Directo</div>
+        <div class="player-title">RadioPhoenix FM</div>
+        <div class="player-status">
+          <span class="dot" id="dot"></span><span id="statusText">Haz clic para escuchar</span>
+        </div>
+      </div>
+    </div>
+    <audio id="radioPlayer" preload="none" style="display:none">
+      <source src="http://radiophoenix.es:8000/stream" type="audio/mpeg">
+    </audio>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<div class="gallery-section">
+  <div class="gallery-wrapper">
+    <div class="gallery-item">
+      <img src="/radio_phonix_barra_principal.jpg" alt="Radio Phoenix — La Barra" loading="lazy" width="800" height="420">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-label">La Barra</div>
+    </div>
+    <div class="gallery-item">
+      <img src="/radio_phoenix_abajo.jpg" alt="Radio Phoenix — Planta Baja" loading="lazy" width="800" height="420">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-label">Planta Baja</div>
+    </div>
+    <div class="gallery-item">
+      <img src="/radio_phoenix_arriba.jpg" alt="Radio Phoenix — Planta Alta" loading="lazy" width="800" height="420">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-label">Planta Alta</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO PERSONAL -->
+<section id="porque">
+  <div class="section-tag">El Origen</div>
+  <div class="intro-personal">
+    <div class="quote-grande">
+      "Phoenix nace de una <em>herida colectiva</em>: la pérdida del silencio, de la pausa, de la escucha, de la belleza como principio."
+    </div>
+    <div class="intro-personal-text">
+      <p>Las ciudades se han vuelto demasiado ruidosas, demasiado rápidas, demasiado exigentes para la sensibilidad humana. Los espacios creativos, que deberían ser templos de introspección, se han transformado en fábricas aceleradas donde <strong>la producción importa más que la intención</strong>.</p>
+      <p>En ese contexto, RadioPhoenix no surge como un proyecto más. Surge como una necesidad. Un lugar donde respirar sea un acto creativo, donde la presencia pueda volver a existir sin ser interrumpida, donde <strong>la técnica y la emoción no se opongan: se alineen</strong>.</p>
+      <p>Somos un bar. Somos una radio. Somos un estudio. Pero sobre todo, somos un acto de resistencia suave desde el corazón de Malasaña.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRIÁNGULO INTEGRADO -->
+<section id="sistema" class="triangulo-section">
+  <div class="section-tag">El Sistema</div>
+  <h2 class="section-title" style="text-align:center;">Tres partes.<br><span class="accent">Una sola cosa.</span></h2>
+  <p style="text-align:center; color:var(--gris-claro); font-size:0.88rem; max-width:500px; margin:0 auto; line-height:1.9;">
+    Bar, radio y estudio no son actividades separadas. Son tres capas del mismo organismo. Cada una alimenta a las otras.
+  </p>
+  <div class="triangulo-wrap">
+    <svg class="tri-svg" viewBox="0 0 700 390" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#7a0a00;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#ff6e00;stop-opacity:1"/>
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <line x1="350" y1="68" x2="90" y2="325" stroke="url(#lineGrad)" stroke-width="1" opacity="0.4" filter="url(#glow)"/>
+      <line x1="350" y1="68" x2="610" y2="325" stroke="url(#lineGrad)" stroke-width="1" opacity="0.4" filter="url(#glow)"/>
+      <line x1="90" y1="325" x2="610" y2="325" stroke="url(#lineGrad)" stroke-width="1" opacity="0.4" filter="url(#glow)"/>
+      <circle cx="350" cy="68" r="4" fill="#ff6e00" opacity="0.8"/>
+      <circle cx="90" cy="325" r="4" fill="#e01a00" opacity="0.8"/>
+      <circle cx="610" cy="325" r="4" fill="#ff6e00" opacity="0.8"/>
+    </svg>
+    <div class="tri-nodo nodo-radio">
+      <div class="tri-nodo-ico">— Radio</div>
+      <h3>La Emisión</h3>
+      <p>Programación continua. Curaduría sonora desde Malasaña hacia el mundo.</p>
+      <a href="#manifiesto" class="tri-btn">Escuchar →</a>
+    </div>
+    <div class="tri-nodo nodo-bar">
+      <div class="tri-nodo-ico">— Bar</div>
+      <h3>El Encuentro</h3>
+      <p>Espacio de proximidad. Donde la comunidad se forma en torno al sonido.</p>
+      <a href="#visita" class="tri-btn">Visitar →</a>
+    </div>
+    <div class="tri-nodo nodo-est">
+      <div class="tri-nodo-ico">— Estudio</div>
+      <h3>La Producción</h3>
+      <p>Infraestructura profesional. Donde las ideas se convierten en realidad sonora.</p>
+      <a href="/estudio.html" class="tri-btn">Ver estudio →</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMUNIDAD -->
+<section id="participa">
+  <div class="section-tag">Comunidad</div>
+  <h2 class="section-title">Forma parte<br><span class="accent">de Phoenix</span></h2>
+  <p style="max-width:560px; color:var(--gris-claro); font-size:0.88rem; line-height:1.9;">
+    Phoenix no es un espacio al que se accede: es un ecosistema al que se pertenece. Puedes entrar como oyente, como creador, como colaborador o como vecino. Los roles no son fijos.
+  </p>
+  <div class="comunidad-grid">
+    <div class="comunidad-card">
+      <div class="comunidad-ico">01 — Oyente</div>
+      <h3>Escucha la Radio</h3>
+      <p>Sintoniza RadioPhoenix FM en directo desde cualquier lugar. Programación continua, cuidada y sin algoritmos. Música que respira.</p>
+      <a href="#inicio" class="comunidad-cta">Escuchar ahora →</a>
+    </div>
+    <div class="comunidad-card">
+      <div class="comunidad-ico">02 — Creador</div>
+      <h3>Reserva el Estudio</h3>
+      <p>Graba, mezcla o masteriza tu proyecto en nuestro estudio profesional. Franjas horarias flexibles, asistencia técnica disponible.</p>
+      <a href="/estudio.html" class="comunidad-cta">Ver disponibilidad →</a>
+    </div>
+    <div class="comunidad-card">
+      <div class="comunidad-ico">03 — Colaborador</div>
+      <h3>Colabora con Nosotros</h3>
+      <p>¿Tienes un proyecto, una idea o quieres proponer una sesión? Escríbenos. Phoenix crece desde la colaboración, no desde la imposición.</p>
+      <a href="mailto:hola@radiophoenix.es" class="comunidad-cta">Contactar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFIESTO -->
+<section id="manifiesto">
+  <div class="manifesto-wrap">
+    <div class="section-tag" style="justify-content:center;">Manifiesto</div>
+    <p class="manifesto-quote">
+      "Un punto de convergencia entre tres realidades: un bar de proximidad, un estudio profesional de producción sonora y una radio en emisión continua, abierta al barrio y conectada con la cultura contemporánea."
+    </p>
+    <div class="neon-divider"></div>
+    <p class="manifesto-body">
+      Phoenix nace como respuesta a un malestar silencioso instalado en el corazón de la sociedad contemporánea. No surge como un proyecto más, sino como una necesidad: un refugio emocional, estético y humano donde lo sensible vuelva a tener valor.
+    </p>
+    <p class="manifesto-body">
+      No nace desde el marketing, la optimización o la búsqueda de eficiencia. Nace desde una herida colectiva: la pérdida del silencio, de la pausa, de la escucha, de la belleza como principio. Phoenix es, en esencia, un contrapeso. Su razón de ser es equilibrar el ruido exterior con un interior suave.
+    </p>
+    <p class="manifesto-body manifesto-highlight">
+      La técnica, la norma y la cultura no se oponen: se alinean.<br>Aquí, la música no irrumpe: acompaña.
+    </p>
+  </div>
+</section>
+
+<!-- EL ESPACIO -->
+<section id="espacio">
+  <div class="section-tag">El Espacio</div>
+  <h2 class="section-title">Tres Capas.<br><span class="accent">Un Sistema.</span></h2>
+  <p style="max-width:580px; color:var(--gris-claro); font-size:0.88rem; line-height:1.9;">
+    Bar, radio y estudio no son tres actividades superpuestas, sino tres capas de un mismo sistema. El bar genera presencia y comunidad. La radio transforma ese tiempo en memoria y alcance. El estudio convierte la experiencia en producción cultural.
+  </p>
+  <div class="pilares">
+    <div class="pilar">
+      <div class="pilar-num">01</div>
+      <div class="pilar-icon">— El Bar</div>
+      <h3>El Latido Visible</h3>
+      <p>Un bar de proximidad en entorno acústico controlado. Un punto de encuentro que recoge la energía de la calle y la devuelve transformada en comunidad. Aquí la música no irrumpe: acompaña.</p>
+    </div>
+    <div class="pilar">
+      <div class="pilar-num">02</div>
+      <div class="pilar-icon">— La Radio</div>
+      <h3>La Vibración Continua</h3>
+      <p>Su curaduría sonora toma como referencia la sensibilidad de Malasaña — sus ritmos, su diversidad, su manera de habitar el tiempo — y la comparte hacia afuera sin diluirla. Emisión continua.</p>
+    </div>
+    <div class="pilar">
+      <div class="pilar-num">03</div>
+      <div class="pilar-icon">— El Estudio</div>
+      <h3>El Núcleo Productivo</h3>
+      <p>El corazón técnico del proyecto. Espacio profesional para grabación, edición y mezcla. Disponible por franjas horarias. La creación no depende de subvenciones ni de precariedad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IDENTIDAD -->
+<section id="identidad">
+  <div class="section-tag">Identidad</div>
+  <h2 class="section-title">Las Raíces<br><span class="accent">del Fuego</span></h2>
+  <p style="max-width:560px; color:var(--gris-claro); font-size:0.88rem; line-height:1.9;">
+    El funambulista — caminando sobre un hilo suspendido entre dos mundos — es el modelo maestro de Phoenix: equilibrio, precisión y vulnerabilidad consciente.
+  </p>
+  <div class="raices">
+    <div class="raiz">
+      <div class="raiz-num">01 —</div>
+      <h4>La Intimidad</h4>
+      <p>Territorio emocional seguro donde la sensibilidad puede expandirse sin miedo. Un pacto de respeto silencioso.</p>
+    </div>
+    <div class="raiz">
+      <div class="raiz-num">02 —</div>
+      <h4>La Artesanía</h4>
+      <p>Atención al detalle, dedicación lenta y responsabilidad hacia la calidad emocional del trabajo.</p>
+    </div>
+    <div class="raiz">
+      <div class="raiz-num">03 —</div>
+      <h4>La Escucha Profunda</h4>
+      <p>No la escucha técnica del sonido, sino la escucha emocional de lo que el espacio y la comunidad necesitan.</p>
+    </div>
+    <div class="raiz">
+      <div class="raiz-num">04 —</div>
+      <h4>La Pausa</h4>
+      <p>La pausa no es ausencia de acción, sino parte del ritmo interno. El derecho a pensar y decidir desde la calma.</p>
+    </div>
+    <div class="raiz">
+      <div class="raiz-num">05 —</div>
+      <h4>Lo Analógico</h4>
+      <p>La textura, la imperfección viva, la memoria material. Lo analógico ancla emocionalmente el proceso creativo.</p>
+    </div>
+    <div class="raiz">
+      <div class="raiz-num">06 —</div>
+      <h4>La Luz Suave</h4>
+      <p>No un elemento decorativo, sino una arquitectura emocional. La luz Phoenix se diseña como si fuera sonido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section id="eventos">
+  <div class="section-tag">Archivo</div>
+  <h2 class="section-title">Sesiones<br><span class="accent">Pasadas</span></h2>
+  <p style="color:var(--gris-claro); font-size:0.83rem;">Una selección de noches que han definido el pulso de Phoenix.</p>
+  <div class="eventos-grid">
+    <div class="evento">
+      <div class="evento-fecha">SAB 15.03.2025 — 20:00</div>
+      <h3>Escucha Abierta Vol.3</h3>
+      <p class="evento-artistas">Sesión colectiva · Solo vinilo · Sin PA</p>
+      <span class="evento-tag">Sesión</span>
+    </div>
+    <div class="evento">
+      <div class="evento-fecha">VIE 21.02.2025 — 21:00</div>
+      <h3>B Stous · Residencia</h3>
+      <p class="evento-artistas">B Stous · House / Electrónica profunda</p>
+      <span class="evento-tag">Residencia</span>
+    </div>
+    <div class="evento">
+      <div class="evento-fecha">SAB 08.02.2025 — 20:30</div>
+      <h3>RE.SET n.78</h3>
+      <p class="evento-artistas">Selección editorial · Electrónica experimental</p>
+      <span class="evento-tag">RE.SET</span>
+    </div>
+    <div class="evento">
+      <div class="evento-fecha">VIE 24.01.2025 — 21:00</div>
+      <h3>Grabación en Abierto</h3>
+      <p class="evento-artistas">Sesión de estudio · Público limitado</p>
+      <span class="evento-tag">Estudio</span>
+    </div>
+    <div class="evento">
+      <div class="evento-fecha">SAB 14.12.2024 — 20:00</div>
+      <h3>Noche Analógica</h3>
+      <p class="evento-artistas">Solo vinilo · Sin digital · Presencia total</p>
+      <span class="evento-tag">Especial</span>
+    </div>
+    <div class="evento">
+      <div class="evento-fecha">VIE 15.11.2024 — 21:30</div>
+      <h3>RE.SET n.77</h3>
+      <p class="evento-artistas">Electrónica de profundidad · Madrid</p>
+      <span class="evento-tag">RE.SET</span>
+    </div>
+  </div>
+  <p style="margin-top:2.5rem;">
+    <a href="https://ra.co/clubs/208329" target="_blank" rel="noopener" class="btn btn-neon">
+      Ver en Resident Advisor →
+    </a>
+  </p>
+</section>
+
+<!-- HORARIOS -->
+<section id="visita">
+  <div class="section-tag">Visita</div>
+  <h2 class="section-title">Horarios</h2>
+  <p style="color:var(--gris-claro); font-size:0.88rem;">Malasaña, Madrid</p>
+  <div class="horarios-grid">
+    <div class="horario">
+      <div class="horario-dia">Lunes — Martes</div>
+      <div class="horario-cerrado">Cerrado</div>
+    </div>
+    <div class="horario">
+      <div class="horario-dia">Miércoles — Jueves</div>
+      <div class="horario-hora">20:00 — 01:30</div>
+    </div>
+    <div class="horario">
+      <div class="horario-dia">Viernes — Sábado</div>
+      <div class="horario-hora">20:00 — 02:30</div>
+    </div>
+    <div class="horario">
+      <div class="horario-dia">Domingo</div>
+      <div class="horario-cerrado">Cerrado</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="footer">
+    <div>
+      <div class="footer-logo">RADIO<span>PHOENIX</span></div>
+      <p class="footer-desc">
+        Un laboratorio de convivencia, un modelo económico sostenible y una plataforma cultural estable que opera desde la serenidad, la moderación sonora y la responsabilidad técnica. Nada aquí se construye desde el ruido: se construye desde la coherencia.
+      </p>
+    </div>
+    <div class="footer-links">
+      <h4>Contacto &amp; Redes</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/radiophoenix/" target="_blank" rel="noopener">Instagram @radiophoenix →</a></li>
+        <li><a href="https://ra.co/clubs/208329" target="_blank" rel="noopener">Resident Advisor →</a></li>
+        <li><a href="https://ra.co/promoters/117347" target="_blank" rel="noopener">RA Promoter →</a></li>
+        <li><a href="mailto:hola@radiophoenix.es">hola@radiophoenix.es →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <p>© 2025 RadioPhoenix | MediaRoom — Malasaña, Madrid</p>
+    <p>Crecemos hacia fuera desde un claro centro.</p>
+  </div>
+</footer>
+
+
+<script>
+  const audio = document.getElementById('radioPlayer');
+  const playBtn = document.getElementById('playBtn');
+  const statusText = document.getElementById('statusText');
+  const dot = document.getElementById('dot');
+  let playing = false;
+
+  function togglePlay() {
+    if (!playing) {
+      audio.play().then(() => {
+        playing = true;
+        playBtn.textContent = '⏸';
+        statusText.textContent = '● En directo';
+      }).catch(() => {
+        statusText.textContent = 'Pronto en emisión';
+        dot.style.background = '#333';
+        dot.style.animation = 'none';
+        dot.style.boxShadow = 'none';
+      });
+    } else {
+      audio.pause();
+      playing = false;
+      playBtn.textContent = '▶';
+      statusText.textContent = 'Pausado';
+    }
+  }
+
+  audio.addEventListener('waiting', () => { statusText.textContent = 'Cargando...'; });
+  audio.addEventListener('error', () => {
+    statusText.textContent = 'Pronto en emisión';
+    dot.style.background = '#333';
+    dot.style.animation = 'none';
+    dot.style.boxShadow = 'none';
+  });
+  audio.addEventListener('playing', () => { statusText.textContent = '● En directo'; });
+
+  function toggleMenu() {
+    const h = document.getElementById('hamburger');
+    const n = document.getElementById('navLinks');
+    h.classList.toggle('open');
+    n.classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        scrollObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pilar, .raiz, .evento, .comunidad-card, .horario, .tri-nodo').forEach((el, i) => {
+    el.classList.add('fade-in');
+    el.style.setProperty('--delay', `${(i % 3) * 0.1}s`);
+    scrollObserver.observe(el);
+  });
+
+</script>
+
+</body>
+</html>

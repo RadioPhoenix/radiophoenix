@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio | RadioPhoenix MediaRoom — Malasaña, Madrid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family:'Audiowide'; src:url('/fonts/Audiowide-Regular.ttf') format('truetype'); }
+
+    *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --negro:#050505; --neon:#ff6e00; --neon-suave:#e07820;
+      --rojo:#e01a00; --rojo-sangre:#7a0a00;
+      --blanco:#f0ebe0; --gris:#181818; --gris-medio:#2a2a2a; --gris-claro:#555;
+      --glow-neon:rgba(255,110,0,0.3); --glow-rojo:rgba(224,26,0,0.35);
+    }
+    html { scroll-behavior:smooth; }
+    body { background:var(--negro); color:var(--blanco); font-family:'Inter',sans-serif; font-weight:300; line-height:1.7; overflow-x:hidden; }
+
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1.4rem 3rem;
+      background:rgba(5,5,5,0.95);
+      border-bottom:1px solid rgba(255,110,0,0.12);
+      backdrop-filter:blur(8px);
+    }
+    .nav-logo { font-family:'Audiowide',sans-serif; font-size:0.72rem; letter-spacing:0.18em; color:var(--neon); text-decoration:none; text-shadow:0 0 14px var(--glow-neon); }
+    .nav-back { font-family:'Audiowide',sans-serif; font-size:0.6rem; letter-spacing:0.15em; color:var(--blanco); text-decoration:none; opacity:0.5; transition:all 0.25s; }
+    .nav-back:hover { opacity:1; color:var(--rojo); }
+
+    /* HERO ESTUDIO */
+    .hero-estudio {
+      min-height:50vh; display:flex; flex-direction:column;
+      justify-content:flex-end; padding:8rem 3rem 4rem;
+      position:relative; border-bottom:1px solid var(--gris);
+    }
+    .hero-estudio::before {
+      content:''; position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse at 30% 60%, rgba(122,10,0,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 30%, rgba(255,110,0,0.1) 0%, transparent 50%);
+    }
+    .hero-estudio-content { position:relative; z-index:2; }
+    .breadcrumb { font-family:'Audiowide',sans-serif; font-size:0.58rem; letter-spacing:0.2em; color:var(--gris-claro); margin-bottom:1.5rem; }
+    .breadcrumb a { color:var(--neon); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--rojo); }
+    .hero-estudio h1 { font-family:'Audiowide',sans-serif; font-size:clamp(2rem,5vw,4.5rem); line-height:1; color:var(--blanco); margin-bottom:0.5rem; }
+    .hero-estudio h1 span { color:var(--neon); text-shadow:0 0 30px var(--glow-neon); }
+    .hero-estudio .sub { font-family:'Syne',sans-serif; font-size:1rem; color:var(--gris-claro); letter-spacing:0.1em; margin-bottom:2rem; }
+
+    /* SECCIONES */
+    section { padding:6rem 3rem; border-bottom:1px solid var(--gris); }
+    .section-tag { font-family:'Audiowide',sans-serif; font-size:0.58rem; letter-spacing:0.3em; color:var(--neon); text-transform:uppercase; margin-bottom:2.5rem; display:flex; align-items:center; gap:1rem; }
+    .section-tag::after { content:''; flex:1; max-width:50px; height:1px; background:var(--neon); opacity:0.5; }
+    .section-title { font-family:'Audiowide',sans-serif; font-size:clamp(1.8rem,4vw,3.5rem); line-height:1.05; color:var(--blanco); margin-bottom:2rem; }
+    .section-title .accent { color:var(--neon); }
+
+    /* INTRO ESTUDIO */
+    .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .intro-text p { font-size:0.92rem; color:var(--gris-claro); line-height:1.95; margin-bottom:1.2rem; }
+    .intro-text p strong { color:var(--blanco); font-weight:400; }
+    .intro-stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+    .stat-box {
+      background:var(--gris); border:1px solid var(--gris-medio);
+      padding:2rem 1.5rem; text-align:center; transition:all 0.3s;
+    }
+    .stat-box:hover { border-color:rgba(255,110,0,0.3); background:rgba(255,110,0,0.04); }
+    .stat-num { font-family:'Audiowide',sans-serif; font-size:2rem; color:var(--neon); line-height:1; margin-bottom:0.5rem; text-shadow:0 0 20px var(--glow-neon); }
+    .stat-label { font-family:'Audiowide',sans-serif; font-size:0.55rem; letter-spacing:0.15em; color:var(--gris-claro); text-transform:uppercase; }
+
+    /* SERVICIOS */
+    .servicios-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:3rem; }
+    .servicio {
+      padding:2.5rem 2rem; background:var(--gris);
+      border:1px solid var(--gris-medio); position:relative; overflow:hidden;
+      transition:all 0.35s;
+    }
+    .servicio::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(to right, var(--rojo-sangre), var(--neon));
+      transform:scaleX(0); transform-origin:left; transition:transform 0.35s;
+    }
+    .servicio:hover::before { transform:scaleX(1); }
+    .servicio:hover { background:rgba(255,110,0,0.04); border-color:rgba(255,110,0,0.2); }
+    .servicio-ico { font-family:'Audiowide',sans-serif; font-size:0.55rem; letter-spacing:0.25em; color:var(--neon); margin-bottom:1.2rem; }
+    .servicio h3 { font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem; color:var(--blanco); margin-bottom:0.8rem; }
+    .servicio p { font-size:0.82rem; color:var(--gris-claro); line-height:1.85; }
+    .servicio .precio { font-family:'Audiowide',sans-serif; font-size:0.65rem; color:var(--neon-suave); margin-top:1rem; letter-spacing:0.1em; }
+
+    /* EQUIPO TECNICO */
+    .equipo-list { display:grid; grid-template-columns:repeat(2,1fr); gap:0; margin-top:3rem; border-top:1px solid var(--gris-medio); border-left:1px solid var(--gris-medio); max-width:800px; }
+    .equipo-item { padding:1.5rem 2rem; border-bottom:1px solid var(--gris-medio); border-right:1px solid var(--gris-medio); }
+    .equipo-cat { font-family:'Audiowide',sans-serif; font-size:0.55rem; letter-spacing:0.2em; color:var(--rojo); margin-bottom:0.4rem; }
+    .equipo-item p { font-size:0.82rem; color:var(--gris-claro); line-height:1.7; }
+
+    /* PROCESO */
+    .proceso-steps { display:flex; flex-direction:column; gap:0; margin-top:3rem; max-width:700px; }
+    .paso {
+      display:grid; grid-template-columns:60px 1fr;
+      gap:2rem; padding:2rem 0; border-bottom:1px solid var(--gris-medio);
+      align-items:start;
+    }
+    .paso-num { font-family:'Audiowide',sans-serif; font-size:1.8rem; color:rgba(255,110,0,0.2); line-height:1; }
+    .paso h4 { font-family:'Syne',sans-serif; font-weight:700; font-size:1rem; color:var(--blanco); margin-bottom:0.4rem; }
+    .paso p { font-size:0.82rem; color:var(--gris-claro); line-height:1.8; }
+
+    /* CTA FINAL */
+    .cta-section {
+      text-align:center; padding:6rem 3rem;
+      background:radial-gradient(ellipse at 50% 100%, rgba(122,10,0,0.2) 0%, transparent 70%);
+    }
+    .cta-section h2 { font-family:'Audiowide',sans-serif; font-size:clamp(1.5rem,4vw,3rem); color:var(--blanco); margin-bottom:1.5rem; line-height:1.2; }
+    .cta-section p { font-size:0.9rem; color:var(--gris-claro); max-width:500px; margin:0 auto 3rem; line-height:1.9; }
+    .cta-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn { display:inline-block; font-family:'Audiowide',sans-serif; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; padding:1rem 2.5rem; transition:all 0.25s; cursor:pointer; border:none; }
+    .btn-primary { background:var(--neon); color:var(--negro); }
+    .btn-primary:hover { background:var(--rojo); box-shadow:0 0 30px var(--glow-rojo); transform:translateY(-2px); }
+    .btn-outline { background:transparent; color:var(--blanco); border:1px solid rgba(255,255,255,0.2); }
+    .btn-outline:hover { border-color:var(--neon); color:var(--neon); box-shadow:0 0 20px var(--glow-neon); }
+
+    footer { padding:2rem 3rem; border-top:1px solid var(--gris); display:flex; justify-content:space-between; align-items:center; }
+    footer p { font-family:'Audiowide',sans-serif; font-size:0.55rem; letter-spacing:0.15em; color:var(--gris-claro); }
+    footer a { color:var(--neon); text-decoration:none; }
+
+    @media(max-width:768px) {
+      nav { padding:1rem 1.4rem; }
+      .hero-estudio { padding:7rem 1.4rem 3rem; }
+      section { padding:3.5rem 1.4rem; }
+      .intro-grid { grid-template-columns:1fr; gap:3rem; }
+      .servicios-grid { grid-template-columns:1fr; }
+      .equipo-list { grid-template-columns:1fr; }
+      .cta-buttons { flex-direction:column; align-items:center; }
+      .btn { width:100%; max-width:320px; text-align:center; }
+      footer { flex-direction:column; gap:0.5rem; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">RADIOPHOENIX</a>
+  <a href="/" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="hero-estudio">
+  <div class="hero-estudio-content">
+    <div class="breadcrumb"><a href="/">RadioPhoenix</a> / Estudio</div>
+    <h1>Estudio<br><span>MediaRoom</span></h1>
+    <p class="sub">Producción sonora profesional en el corazón de Malasaña</p>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section>
+  <div class="section-tag">El Espacio</div>
+  <div class="intro-grid">
+    <div class="intro-text">
+      <h2 class="section-title">Un estudio<br><span class="accent">para crear.</span></h2>
+      <p>El estudio de RadioPhoenix es el <strong>corazón técnico del proyecto</strong>. No es un espacio de ocio ni de acceso público indiscriminado. Es una infraestructura creativa profesional diseñada para que la cultura no sea solo emitida, sino también <strong>producida desde dentro del propio sistema</strong>.</p>
+      <p>Disponible por <strong>franjas horarias</strong> para músicos, productores, podcasters y artistas sonoros. La creación aquí no depende de subvenciones ni de precariedad: se articula como una actividad profesional integrada en la vida del proyecto.</p>
+      <p>Cada sesión en el estudio alimenta la radio. Cada grabación refuerza la comunidad. Nada ocurre de manera aislada.</p>
+    </div>
+    <div class="intro-stat-grid">
+      <div class="stat-box">
+        <div class="stat-num">24h</div>
+        <div class="stat-label">Reserva online</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">Pro</div>
+        <div class="stat-label">Equipamiento</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1:1</div>
+        <div class="stat-label">Asistencia técnica</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">RAW</div>
+        <div class="stat-label">Archivos master</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section>
+  <div class="section-tag">Servicios</div>
+  <h2 class="section-title">¿Qué puedes<br><span class="accent">hacer aquí?</span></h2>
+  <div class="servicios-grid">
+    <div class="servicio">
+      <div class="servicio-ico">01 — Grabación</div>
+      <h3>Grabación Multicanal</h3>
+      <p>Sesiones de grabación para voz, instrumentos acústicos y eléctricos. Captación de alta calidad con micrófonos de condensador y dinámicos profesionales. Monitorización en tiempo real.</p>
+      <div class="precio">Desde 30€ / hora</div>
+    </div>
+    <div class="servicio">
+      <div class="servicio-ico">02 — Mezcla</div>
+      <h3>Mezcla & Edición</h3>
+      <p>Edición y mezcla de proyectos musicales, sesiones de DJ, podcasts y piezas editoriales. Entrega en formatos WAV, AIFF y MP3 a resolución nativa.</p>
+      <div class="precio">Desde 40€ / hora</div>
+    </div>
+    <div class="servicio">
+      <div class="servicio-ico">03 — Podcast</div>
+      <h3>Producción de Podcast</h3>
+      <p>Espacio tratado acústicamente para grabación de podcasts y programas de radio. Posibilidad de emisión en directo a través de RadioPhoenix FM. Edición y entrega incluidas.</p>
+      <div class="precio">Desde 25€ / hora</div>
+    </div>
+    <div class="servicio">
+      <div class="servicio-ico">04 — Masterización</div>
+      <h3>Masterización</h3>
+      <p>Masterización para plataformas digitales (Spotify, Bandcamp, SoundCloud) y para vinilo. Ajuste de loudness, ecualización final y limitación dinámica profesional.</p>
+      <div class="precio">Desde 60€ / tema</div>
+    </div>
+    <div class="servicio">
+      <div class="servicio-ico">05 — Residencia</div>
+      <h3>Residencia Artística</h3>
+      <p>Acceso mensual con horas reservadas para proyectos en curso. Integración en la programación de la radio y posibilidad de presentación en el bar. Comunidad de artistas residente.</p>
+      <div class="precio">Desde 150€ / mes</div>
+    </div>
+    <div class="servicio">
+      <div class="servicio-ico">06 — Formación</div>
+      <h3>Talleres & Formación</h3>
+      <p>Talleres de producción musical, técnica de grabación, diseño sonoro y DJing. Grupos reducidos, ambiente íntimo. Programa trimestral disponible bajo solicitud.</p>
+      <div class="precio">Consultar programa</div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPAMIENTO -->
+<section>
+  <div class="section-tag">Técnica</div>
+  <h2 class="section-title">Equipamiento</h2>
+  <p style="color:var(--gris-claro);font-size:0.88rem;max-width:560px;line-height:1.9;">
+    Todo el equipamiento está mantenido, calibrado y disponible en cada sesión. Sin sorpresas. Sin material de segunda mano sin revisar.
+  </p>
+  <div class="equipo-list">
+    <div class="equipo-item">
+      <div class="equipo-cat">Interfaz de audio</div>
+      <p>Conversor AD/DA de alta resolución, latencia ultrabaja, soporte hasta 192kHz / 32bit</p>
+    </div>
+    <div class="equipo-item">
+      <div class="equipo-cat">Microfonía</div>
+      <p>Condensadores de diafragma grande, micrófonos dinámicos Shure SM7B, cinta vintage</p>
+    </div>
+    <div class="equipo-item">
+      <div class="equipo-cat">Monitorización</div>
+      <p>Monitores de campo cercano calibrados, auriculares de referencia para mezcla</p>
+    </div>
+    <div class="equipo-item">
+      <div class="equipo-cat">Software DAW</div>
+      <p>Ableton Live, Logic Pro, Pro Tools. Plugins profesionales de mezcla y masterización</p>
+    </div>
+    <div class="equipo-item">
+      <div class="equipo-cat">Tratamiento acústico</div>
+      <p>Sala tratada con paneles absorbentes y difusores. Tiempo de reverberación controlado</p>
+    </div>
+    <div class="equipo-item">
+      <div class="equipo-cat">Hardware analógico</div>
+      <p>Compresor de válvulas, ecualizadores hardware, patch bay semiprofesional</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section>
+  <div class="section-tag">Cómo funciona</div>
+  <h2 class="section-title">Del primer<br><span class="accent">contacto a la sesión</span></h2>
+  <div class="proceso-steps">
+    <div class="paso">
+      <div class="paso-num">01</div>
+      <div>
+        <h4>Contacta y cuéntanos tu proyecto</h4>
+        <p>Escríbenos por email o Instagram. Cuéntanos qué quieres grabar, tu nivel de experiencia y qué resultado buscas. Te respondemos en menos de 24 horas.</p>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">02</div>
+      <div>
+        <h4>Reserva tu franja horaria</h4>
+        <p>Elige el día y la hora que mejor te vienen. Las sesiones pueden ser de 2, 4 u 8 horas. Confirmamos por email con todos los detalles técnicos.</p>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">03</div>
+      <div>
+        <h4>Llega y crea</h4>
+        <p>El estudio estará listo cuando llegues. Nuestro técnico te acompaña si lo necesitas o te deja trabajar con autonomía total si lo prefieres.</p>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">04</div>
+      <div>
+        <h4>Recibe tus archivos</h4>
+        <p>Al finalizar, recibes tus archivos en alta resolución. Si quieres que tu trabajo se emita en RadioPhoenix FM, lo gestionamos en el momento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>¿Listo para<br>crear algo real?</h2>
+  <p>El estudio de RadioPhoenix está esperando tu proyecto. Hablemos.</p>
+  <div class="cta-buttons">
+    <a href="mailto:estudio@radiophoenix.es" class="btn btn-primary">Reservar sesión →</a>
+    <a href="https://www.instagram.com/radiophoenix/" target="_blank" class="btn btn-outline">Instagram @radiophoenix</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 RadioPhoenix | MediaRoom — Malasaña, Madrid</p>
+  <p><a href="/">← Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
