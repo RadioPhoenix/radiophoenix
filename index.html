@@ -1368,7 +1368,25 @@
     dot.style.animation = 'none';
     dot.style.boxShadow = 'none';
   });
-  audio.addEventListener('playing', () => { statusText.textContent = '● En directo'; });
+  audio.addEventListener('playing', () => {
+    statusText.textContent = '● En directo';
+    fetchNowPlaying();
+  });
+
+  function fetchNowPlaying() {
+    fetch('/icecast-status')
+      .then(r => r.json())
+      .then(d => {
+        const src = d?.icestats?.source;
+        if (!src) return;
+        const raw = src.title || '';
+        const clean = raw.replace(/^.*[\\/]/, '').replace(/\.[^.]+$/, '').replace(/_/g, ' ');
+        if (clean) statusText.textContent = '♫ ' + clean;
+      })
+      .catch(() => {});
+  }
+
+  setInterval(() => { if (playing) fetchNowPlaying(); }, 15000);
 
   function toggleMenu() {
     const h = document.getElementById('hamburger');
